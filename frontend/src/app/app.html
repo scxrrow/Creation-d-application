@@ -1,4 +1,9 @@
-<main>
-  <h1>Ma Bibliothèque Virtuelle</h1>
-  <app-book-list></app-book-list>
+<nav style="background: #343a40; padding: 15px; color: white;">
+  <h1 style="margin: 0; display: inline-block; margin-right: 20px;">📚 Bibliothèque</h1>
+  <a routerLink="/books" style="color: white; margin-right: 15px; text-decoration: none;">Liste des livres</a>
+  <a routerLink="/books/new" style="color: white; text-decoration: none;">Ajouter un livre</a>
+</nav>
+
+<main style="padding: 20px;">
+  <router-outlet></router-outlet>
 </main>
