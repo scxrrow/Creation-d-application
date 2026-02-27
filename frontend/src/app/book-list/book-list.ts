@@ -15,7 +15,7 @@ export class BookListComponent implements OnInit {
   
   books: Book[] = []; 
 
-  // 2. Injecte le ChangeDetectorRef ici
+
   constructor(
     private bookService: BookService,
     private cdr: ChangeDetectorRef 
@@ -29,7 +29,6 @@ export class BookListComponent implements OnInit {
     this.bookService.getBooks().subscribe({
       next: (data) => {
         this.books = data;
-        // 3. Force la mise à jour visuelle !
         this.cdr.detectChanges(); 
       },
       error: (err) => console.error(err)

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// 1. LE MODÈLE TYPESCRIPT (Équivalent de ton Book.java)
 export interface Book {
   id?: number;
   title: string;
@@ -15,12 +14,11 @@ export interface Book {
   providedIn: 'root'
 })
 export class BookService {
-  // L'adresse de ton API Spring Boot
+
   private apiUrl = 'http://localhost:8080/api/books';
 
   constructor(private http: HttpClient) { }
 
-  // --- LES APPELS VERS SPRING BOOT ---
 
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl);

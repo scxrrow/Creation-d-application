@@ -33,7 +33,6 @@ export class BookFormComponent implements OnInit {
       this.bookService.getBookById(+id).subscribe({
         next: (data) => {
           this.book = data;
-          // 3. Force la mise à jour visuelle des cases !
           this.cdr.detectChanges();
         },
         error: (err) => {
