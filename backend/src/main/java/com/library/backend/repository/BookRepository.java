@@ -7,5 +7,5 @@ import com.library.backend.model.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-    // JpaRepository fournit déjà findAll, findById, save, deleteById...
+
 }

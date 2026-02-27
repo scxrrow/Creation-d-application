@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data // Génère getters, setters, toString, etc.
+@Data 
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
