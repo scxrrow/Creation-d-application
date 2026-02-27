@@ -137,5 +137,5 @@ ng serve
 ---
 
 ## Auteur
-
+Noah Felten
 Projet réalisé dans le cadre d’un exercice **Spring Boot + Angular**.
