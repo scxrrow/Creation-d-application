@@ -48,7 +48,7 @@ SpringBoot Angular/
 ## Prérequis
 
 - Java installé (`java -version`)
-- Node.js + npm installés (`node -v`, `npm -v`)
+- Angular cli + npm installés (`node -v`, `npm -v`)
 
 > Conseil : utilise le **Maven Wrapper** du projet (`./mvnw`) pour éviter les différences de version Maven.
 
@@ -64,12 +64,12 @@ Depuis la racine du workspace :
 cd backend
 ./mvnw spring-boot:run
 ```
-
-Alternative depuis la racine sans `cd` :
-
+ou
 ```bash
-mvn -f backend/pom.xml spring-boot:run
+cd backend
+mvn spring-boot:run
 ```
+
 
 ### 2) Démarrer le frontend (port 4200)
 
@@ -77,8 +77,7 @@ Dans un second terminal :
 
 ```bash
 cd frontend
-npm install
-npm start
+ng serve
 ```
 
 ---
@@ -90,7 +89,7 @@ npm start
 - Swagger UI :
 	- http://localhost:8080/swagger-ui.html
 	- ou http://localhost:8080/swagger-ui/index.html
-- Console H2 : http://localhost:8080/h2-console
+
 
 ---
 
@@ -117,17 +116,6 @@ Base URL : `http://localhost:8080/api/books`
 
 ---
 
-## Configuration base de données (H2)
-
-Le backend utilise une base H2 en mémoire :
-- URL JDBC : `jdbc:h2:mem:testdb`
-- User : `sa`
-- Mot de passe : *(vide)*
-
-La base est recréée au redémarrage de l’application.
-
----
-
 ## Commandes utiles
 
 ### Backend
@@ -143,37 +131,8 @@ cd backend
 
 ```bash
 cd frontend
-npm start
-npm run build
-npm test
+ng serve
 ```
-
----
-
-## Dépannage rapide
-
-### Erreur Maven : `No plugin found for prefix 'spring-boot'`
-
-Tu lances la commande depuis le mauvais dossier.
-
-Utilise :
-
-```bash
-cd backend && ./mvnw spring-boot:run
-```
-
-ou :
-
-```bash
-mvn -f backend/pom.xml spring-boot:run
-```
-
-### Swagger ne s’affiche pas
-
-- Vérifie que le backend tourne sur le port `8080`
-- Teste les deux URLs :
-	- `/swagger-ui.html`
-	- `/swagger-ui/index.html`
 
 ---
 
